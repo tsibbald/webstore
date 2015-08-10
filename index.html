@@ -1,0 +1,138 @@
+<!doctype html>
+<html ng-app="productApp">
+<head>
+	<title>Bijenkorf herenkleding</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="js/angular/angular.min.js"></script>
+	<script src="js/angular/angular-animate.min.js"></script>
+	<script type="text/javascript" src="js/angular/controller/min/controller-min.js"></script>
+	<link href="css/main.min.css"  rel="stylesheet" type="text/css">
+</head>
+<body itemscope="" itemtype="http://schema.org/WebPage" ng-controller="ProductController" ng-init='load()'>
+	<div class="content">
+		<div class="row">
+			<div class="product" itemtype="https://schema.org/MensClothingStore" ng-mouseover="product_1 = true" ng-mouseleave="product_1 = false">
+			<p>Product 1</p>
+			<p>Select color<p>
+					<select ng-model="product1_colorselect" ng-init="product1_colorselect='black'"> 
+						<option value="black"> black</option>
+						<option value="red"> red</option>
+					</select>
+				<div class="row">
+					<div class="main_pic" >
+					<img ng-src="images/product_image/13_{{item.src}}" ng-repeat="item in products | filter: { color: product1_colorselect }" ng-show="isActive($index)" itemprop="image" class="product_image" > 
+					</div>
+					<div class="pic_nav"  ng-show="product_1" class="ng-hide" > 
+						<img ng-src="images/thumb_image/11_{{item.src}}" ng-mouseover="showPhoto($index)" ng-repeat="item in products | filter: { color: product1_colorselect}" ng-click="showPhoto($index);" class="thumb_image" ng-class="{'active':isActive($index)}" />
+					</div>
+
+				</div>
+				<div class="row">
+					<div class="sizes" ng-show="product_1" class="ng-hide">
+					<div class="btn" ng-model="product1_sizeselect" ng-click="" value="s">S</div>
+					<div class="btn" ng-model="product1_sizeselect" ng-click="" value="xs">XS</div>
+					<div class="btn" ng-model="product1_sizeselect" ng-click="" value="m">M</div>
+					<div class="btn" ng-model="product1_sizeselect" ng-click="" value="l">L</div>
+					<div class="btn" ng-model="product1_sizeselect" ng-click="" value="xl">XL</div>
+					<div class="btn" ng-model="product1_sizeselect" ng-click="" value=="xxl">XXL</div>
+					</div>
+				</div>
+			</div>
+			<div class="product" itemtype="https://schema.org/MensClothingStore" ng-mouseover="product_2 = true" ng-mouseleave="product_2 = false">
+				<div class="row">
+				<p>Product 2</p>
+				<p>Select color<p>
+					<select ng-model="product2_colorselect" ng-init="product2_colorselect='black'"> 
+						<option value="black"> black</option>
+						<option value="red"> red</option>
+					</select>
+					<div class="main_pic" >
+					<img src="images/product_image/13_0709202000312002_pro_mod_frt_01_1108_1528_1187957.jpg" class="product_image" >
+
+					</div>
+					<div class="pic_nav" ng-show="product_2" class="ng-hide"  > 
+						nav
+					</div>
+				</div>
+				<div class="row">
+					<div class="sizes" ng-show="product_2" class="ng-hide">
+					sizes
+					</div>
+				</div>
+			</div>
+			<div class="product" itemtype="https://schema.org/MensClothingStore" ng-mouseover="product_3 = true" ng-mouseleave="product_3 = false">
+				<div class="row">
+				<p>Product 3</p>
+				<p>Select color<p>
+				<select ng-model="product3_colorselect" ng-init="product3_colorselect='black'"> 
+						<option value="black"> black</option>
+						<option value="red"> red</option>
+					</select>
+					<div class="main_pic">
+					<img src="images/product_image/13_0709402002816002_pro_mod_frt_01_1108_1528_1187369.jpg" class="product_image" >
+
+					</div>
+					<div class="pic_nav" ng-show="product_3" class="ng-hide"> nav
+					</div>
+				</div>
+				<div class="row">
+					<div class="sizes" ng-show="product_3" class="ng-hide">
+					sizes
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="product" itemtype="https://schema.org/MensClothingStore" ng-mouseover="product_4 = true" ng-mouseleave="product_4 = false">
+				<div class="row">
+				<p>Product 4</p>
+					<div class="main_pic">
+					 <img src="images/product_image/13_0709402002816002_pro_mod_frt_01_1108_1528_1187369.jpg" class="product_image" >
+
+					</div>
+					<div class="pic_nav" ng-show="product_4" class="ng-hide" > nav
+					</div>
+				</div>
+				<div class="row">
+					<div class="sizes" ng-show="product_4" class="ng-hide">
+					sizes
+					</div>
+				</div>
+			</div>
+			<div class="product" itemtype="https://schema.org/MensClothingStore" ng-mouseover="product_5 = true" ng-mouseleave="product_5 = false">
+				<div class="row">
+				<p>Product 5</p>
+					<div class="main_pic">
+					<img src="images/product_image/13_0709402002816002_pro_mod_frt_01_1108_1528_1187369.jpg" class="product_image" >
+
+					</div>
+					<div class="pic_nav" ng-show="product_5" class="ng-hide" > nav
+					</div>
+				</div>
+				<div class="row">
+					<div class="sizes" ng-show="product_5" class="ng-hide">
+					sizes
+					</div>
+				</div>
+			</div>
+			<div class="product" itemtype="https://schema.org/MensClothingStore" ng-mouseover="product_6 = true" ng-mouseleave="product_6 = false">
+				<div class="row">
+				<p>Product 6</p>
+					<div class="main_pic">
+					<img src="images/product_image/13_0709402002816002_pro_mod_frt_01_1108_1528_1187369.jpg" class="product_image" >
+
+					</div>
+					<div class="pic_nav" ng-show="product_6" class="ng-hide" > nav
+					</div>
+				</div>
+				<div class="row" ng-show="product_6" class="ng-hide">
+					<div class="sizes" ng-show="product_6" class="ng-hide">
+					sizes
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+@import 'partials/animate';
+@import 'partials/variables';
+@import 'partials/buttons';
+
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+.ng-hide-remove { animation:0.5s fadeIn ease; }
+
+
+.repeat-animation.ng-hide-remove { animation:0.5s fadeIn ease; }
+ 
+
+.row{
+	:before,
+	:after{
+	  display: table;
+	  content: " ";
+	  clear: both;
+	}
+}
+
+.content{
+	width:100%;
+	padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+	.row{
+		margin-bottom:20px;
+		.product {
+			display:block;
+			height:750px;
+		  	float: left;
+			  @media screen and (max-width: $screen-mobile) {
+			    width: 100%;
+			    float: none;
+			  }
+			  @media screen and (min-width: $screen-mobile + 1) and (max-width: $screen-desktop - 1){
+			  	width:50%;
+			    float: left;
+			  }
+			  @media screen and (min-width: $screen-desktop) {
+			  	width:33%;
+			    float: left;
+			  }
+			.row{
+				width: 100%;
+				.main_pic{
+					display:block;
+					float:left;
+					width: 70%;
+					img.product_image{
+						max-width:100%; 
+						height:auto;
+					}
+				}	
+				.pic_nav{
+					display:block;
+					margin-left:10px;
+					height:500px;
+					float:left;
+    				overflow: scroll;
+					width: 20%;
+					img.thumb_image{
+						max-width:100%; 
+						height:auto;
+						:hover{
+							border: 1px solid black;
+						}
+					}
+				}		
+			}
+			.row{
+				width: 100%;
+				.sizes{
+					width: 100%;
+				}	
+	
+			}
+		}
+	}
+}
